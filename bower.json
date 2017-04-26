@@ -1,0 +1,21 @@
+{
+  "name": "wxdemonode",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Kibos <759508922@qq.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
