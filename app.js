@@ -9,10 +9,21 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var message = require('./routes/message');
 
+var app = express();
+
 var https = require('https');
 var fs = require('fs');
+const options = {
+  pfx: fs.readFileSync('bin/214015986500090.pfx'),
+  passphrase: '214015986500090'
+};
+var httpsServer = https.createServer(options, app);
+httpsServer.listen(5000, function() {
+    console.log('HTTPS Server is running on: https://localhost:%s', 5000);
+});
 
-var app = express();
+
+
 var ejs = require('ejs');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -38,8 +49,6 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
-
-
 
 // error handler
 app.use(function(err, req, res, next) {
